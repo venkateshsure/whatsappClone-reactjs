@@ -9,10 +9,29 @@ import SearchIcon from "@mui/icons-material/Search";
 import { IconButton } from "@material-ui/core";
 
 import SidebarChat from "../SidebarChat";
+import { db } from "../../firebase";
 
 import "./index.css";
 
+import { useState, useEffect } from "react";
+
 function Sidebar() {
+  const [rooms, setRooms] = useState([]);
+
+  useEffect(() => {
+    const unsubscribe = db.collection("rooms").onSnapShot((snapshot) =>
+      setRooms(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+      )
+    );
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
   return (
     <div className="sidebar">
       <div className="sidebar_header">
@@ -41,9 +60,9 @@ function Sidebar() {
       </div>
       <div className="sidebar_chats">
         <SidebarChat addNewChat />
-        <SidebarChat />
-        <SidebarChat />
-        <SidebarChat />
+        {rooms.map((room) => (
+          <SidebarChat key={room.id} id={room.id} name={room.data.name} />
+        ))}
       </div>
     </div>
   );

@@ -7,10 +7,22 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 import { useState } from "react";
 
+import { useParams } from "react-router-dom";
+
 import "./index.css";
 
 function Chat() {
   const [input, setInput] = useState("");
+  const { roomId } = useParams();
+  const [roomName, setRoomName] = useState("");
+
+  useEffect(() => {
+    if (roomId) {
+      db.collection("rooms")
+        .doc(roomId)
+        .onSnapshot((snapshot) => setRoomName(snapshot.data().name));
+    }
+  }, [roomId]);
 
   const sendMsg = (e) => {
     e.preventDefault();
