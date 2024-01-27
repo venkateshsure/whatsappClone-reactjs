@@ -8,13 +8,15 @@ import Sidebar from "./components/Sidebar";
 
 import Chat from "./components/Chat";
 
+import Login from "./components/Login";
+
 const App = () => {
   const [user, setUser] = useState(null);
 
   return (
     <div className="app">
       {!user ? (
-        <h1>Login</h1>
+        <Login />
       ) : (
         <div className="app_body">
           <BrowserRouter>
