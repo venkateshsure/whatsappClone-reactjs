@@ -50,8 +50,7 @@
 }
 
 .sidebar_chats {
-  background-color: blue;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex: 1;
+  background-color: white;
+  overflow: scroll;
 }
