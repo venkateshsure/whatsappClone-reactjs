@@ -8,6 +8,8 @@ import SearchIcon from "@mui/icons-material/Search";
 
 import { IconButton } from "@material-ui/core";
 
+import SidebarChat from "../SidebarChat";
+
 import "./index.css";
 
 function Sidebar() {
@@ -37,7 +39,9 @@ function Sidebar() {
           />
         </div>
       </div>
-      <div className="sidebar_chats"></div>
+      <div className="sidebar_chats ">
+        <SidebarChat />
+      </div>
     </div>
   );
 }
