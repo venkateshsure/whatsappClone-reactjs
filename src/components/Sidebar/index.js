@@ -14,9 +14,11 @@ import { db } from "../../firebase";
 import "./index.css";
 
 import { useState, useEffect } from "react";
+import useStateValue from "../../StateProvider";
 
 function Sidebar() {
   const [rooms, setRooms] = useState([]);
+  const [{ user }, dispatch] = useStateValue();
 
   useEffect(() => {
     const unsubscribe = db.collection("rooms").onSnapShot((snapshot) =>
