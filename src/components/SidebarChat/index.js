@@ -2,7 +2,7 @@ import { Avatar } from "@material-ui/core";
 
 import { db } from "../../firebase";
 
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 import "./index.css";
 
@@ -17,15 +17,16 @@ function SidebarChat({ id, name, addNewChat }) {
   };
   return !addNewChat ? (
     <Link to={`/rooms/${id}`}>
-    <div className="sidebarChat">
-      <Avatar src="https://api.dicebear.com/7.x/adventurer/svg" />
+      <div className="sidebarChat">
+        <Avatar src="https://api.dicebear.com/7.x/adventurer/svg" />
 
-      <div className="sidebarChat_info">
-        <h2>{name}</h2>
-        <p>Last message...</p>
+        <div className="sidebarChat_info">
+          <h2>{name}</h2>
+          <p>Last message...</p>
+        </div>
       </div>
-    </div>
-  )</Link> : (
+    </Link>
+  ) : (
     <div onClick={createChat} className="sidebarChat">
       <h2>Add new Chat</h2>
     </div>

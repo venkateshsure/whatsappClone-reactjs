@@ -5,9 +5,11 @@ import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { useParams } from "react-router-dom";
+
+import { db } from "../../firebase";
 
 import "./index.css";
 
