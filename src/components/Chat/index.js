@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import { db } from "../../firebase";
-import { useStateValue } from "./StateProvider";
+import { useStateValue } from "../../StateProvider";
 
 import firebase from "firebase";
 

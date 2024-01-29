@@ -1,6 +1,6 @@
 import { Switch, BrowserRouter, Route } from "react-router-dom";
 
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
 import "./App.css";
 
@@ -9,10 +9,10 @@ import Sidebar from "./components/Sidebar";
 import Chat from "./components/Chat";
 
 import Login from "./components/Login";
-import useStateValue from "./StateProvider";
+import { useStateValue } from "./StateProvider";
 
 const App = () => {
-  const [{ user }, dispatch] = useStateValue(null);
+  const [{ user }, dispatch] = useStateValue();
 
   return (
     <div className="app">

@@ -3,7 +3,9 @@ import { Button } from "@material-ui/core";
 import "./index.css";
 
 import { auth, provider } from "../../firebase";
-import { actionTypes } from "./reducer";
+import { actionTypes } from "../../reducer";
+
+import { useStateValue } from "../../StateProvider";
 
 function Login() {
   const [{}, dispatch] = useStateValue();
@@ -29,7 +31,7 @@ function Login() {
         <div className="login__text">
           <h1>Sign in to WhatsApp</h1>
         </div>
-        Sonny Sangha
+
         <Button type="submit" onClick={signIn}>
           Sign In With Google
         </Button>

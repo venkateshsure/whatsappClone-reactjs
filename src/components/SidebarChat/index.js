@@ -4,26 +4,23 @@ import { db } from "../../firebase";
 
 import { Link } from "react-router-dom";
 
+import { useState, useEffect } from "react";
+
 import "./index.css";
 
 function SidebarChat({ id, name, addNewChat }) {
-
-
-    const [messages, setMessages] useState("");
-    useEffect (() => {
+  const [messages, setMessages] = useState("");
+  useEffect(() => {
     if (id) {
-        db.collection("rooms")
-        .doc (id)
-        .collection ("messages")
+      db.collection("rooms")
+        .doc(id)
+        .collection("messages")
         .orderBy("timestamp", "desc")
-    .onSnapshot((snapshot) =>
-    setMessages (snapshot.docs.map((doc) =>
-    doc.data()))
-     ) }
-},[id])
-
-
-
+        .onSnapshot((snapshot) =>
+          setMessages(snapshot.docs.map((doc) => doc.data()))
+        );
+    }
+  }, [id]);
 
   const createChat = () => {
     const roomName = prompt("please enter name for chat");
