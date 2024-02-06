@@ -1,7 +1,5 @@
 import { Switch, BrowserRouter, Route } from "react-router-dom";
 
-// import { useState, useEffect } from "react";
-
 import "./App.css";
 
 import Sidebar from "./components/Sidebar";
@@ -12,7 +10,8 @@ import Login from "./components/Login";
 import { useStateValue } from "./StateProvider";
 
 const App = () => {
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
+  //  const [{ user }, dispatch] = useStateValue();
 
   return (
     <div className="app">

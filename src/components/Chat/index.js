@@ -12,7 +12,10 @@ import { useParams } from "react-router-dom";
 import { db } from "../../firebase";
 import { useStateValue } from "../../StateProvider";
 
-import firebase from "firebase";
+// import firebase from "firebase";
+
+// import { firestore, auth, FieldValue } from "firebase/firestore";
+import { serverTimestamp } from "firebase/firestore";
 
 import "./index.css";
 
@@ -21,7 +24,8 @@ function Chat() {
   const { roomId } = useParams();
   const [roomName, setRoomName] = useState("");
   const [messages, setMessages] = useState([]);
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
+  // const [{ user }, dispatch] = useStateValue();
 
   useEffect(() => {
     if (roomId) {
@@ -45,7 +49,7 @@ function Chat() {
     db.collection("rooms").doc(roomId).collection("messages").add({
       message: input,
       name: user.displayName,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      timestamp: serverTimestamp(),
     });
 
     setInput("");
@@ -60,7 +64,7 @@ function Chat() {
       <div className="chat_header">
         <Avatar src="https://api.dicebear.com/7.x/adventurer/svg" />
         <div className="chat_headerInfo">
-          <h3>Room name</h3>
+          <h3>{roomName}</h3>
           <p>
             Last seen{" "}
             {new Date(

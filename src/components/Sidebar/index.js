@@ -18,7 +18,8 @@ import { useStateValue } from "../../StateProvider";
 
 function Sidebar() {
   const [rooms, setRooms] = useState([]);
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
+  //  const [{ user }, dispatch] = useStateValue();
 
   useEffect(() => {
     const unsubscribe = db.collection("rooms").onSnapShot((snapshot) =>
@@ -37,7 +38,7 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <div className="sidebar_header">
-        <AccountCircleIcon />
+        <AccountCircleIcon src={user?.photoURL} />
         <div className="sidebar_headerRight">
           <IconButton>
             <DonutLargeIcon />
