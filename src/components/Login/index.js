@@ -12,11 +12,6 @@ import "./index.css";
 
 function Login() {
   const [dispatch] = useStateValue();
-<<<<<<< HEAD
-  // const [{ user }, dispatch] = useStateValue();
-=======
-  //  const [{}, dispatch] = useStateValue();
->>>>>>> e03d802ad91b1e5e44abcc23dbf953813054949d
   const signIn = () => {
     auth
       .signInWithPopup(provider)
