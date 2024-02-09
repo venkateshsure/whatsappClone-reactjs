@@ -1,7 +1,5 @@
 import { Switch, BrowserRouter, Route } from "react-router-dom";
 
-// import { useState, useEffect } from "react";
-
 import "./App.css";
 
 import Sidebar from "./components/Sidebar";

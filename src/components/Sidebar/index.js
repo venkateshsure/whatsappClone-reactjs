@@ -19,7 +19,11 @@ import "./index.css";
 function Sidebar() {
   const [rooms, setRooms] = useState([]);
   const [{ user }] = useStateValue();
+<<<<<<< HEAD
   // const [{ user }, dispatch] = useStateValue();
+=======
+  //  const [{ user }, dispatch] = useStateValue();
+>>>>>>> e03d802ad91b1e5e44abcc23dbf953813054949d
 
   useEffect(() => {
     const unsubscribe = db.collection("rooms").onSnapShot((snapshot) =>

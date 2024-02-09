@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 
 import { useStateValue } from "../../StateProvider";
 
+<<<<<<< HEAD
 import { serverTimestamp } from "firebase/firestore";
 
 import { Avatar, IconButton } from "@material-ui/core";
@@ -13,6 +14,12 @@ import MicIcon from "@mui/icons-material/Mic";
 import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+=======
+// import firebase from "firebase";
+
+// import { firestore, auth, FieldValue } from "firebase/firestore";
+import { serverTimestamp } from "firebase/firestore";
+>>>>>>> e03d802ad91b1e5e44abcc23dbf953813054949d
 
 import "./index.css";
 
@@ -22,6 +29,10 @@ function Chat() {
   const [roomName, setRoomName] = useState("");
   const [messages, setMessages] = useState([]);
   const [{ user }] = useStateValue();
+<<<<<<< HEAD
+=======
+  // const [{ user }, dispatch] = useStateValue();
+>>>>>>> e03d802ad91b1e5e44abcc23dbf953813054949d
 
   useEffect(() => {
     if (roomId) {
