@@ -1,19 +1,18 @@
+import { db } from "../../firebase";
+import { useState, useEffect } from "react";
+
+import { useParams } from "react-router-dom";
+
+import { useStateValue } from "../../StateProvider";
+
+import { serverTimestamp } from "firebase/firestore";
+
 import { Avatar, IconButton } from "@material-ui/core";
 import SearchIcon from "@mui/icons-material/Search";
 import MicIcon from "@mui/icons-material/Mic";
 import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-
-import { useState, useEffect } from "react";
-
-import { useParams } from "react-router-dom";
-
-import { db } from "../../firebase";
-import { useStateValue } from "../../StateProvider";
-
-// import { firestore, auth, FieldValue } from "firebase/firestore";
-import { serverTimestamp } from "firebase/firestore";
 
 import "./index.css";
 

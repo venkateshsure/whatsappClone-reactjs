@@ -12,7 +12,8 @@ import Login from "./components/Login";
 import { useStateValue } from "./StateProvider";
 
 const App = () => {
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
+  //  const [{ user }, dispatch] = useStateValue();
 
   return (
     <div className="app">
